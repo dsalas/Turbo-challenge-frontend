@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #FAF1E3;
+  --foreground: #88642A;
+  --font-turbo-inter: Inter;
+  --font-turbo-inria: Inria Serif;
+  --category-1: #EF9C66;
+  --category-2: #FCDC94;
+  --category-3: #C8CFA0;
+  --category-4: #78ABA8;
+  
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #FAF1E3;
+    --foreground: #88642A;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-turbo-inter);
+}
