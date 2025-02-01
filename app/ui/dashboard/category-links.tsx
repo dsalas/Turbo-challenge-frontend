@@ -8,6 +8,7 @@ export default async function CategoryLinks() {
       </a>
       {categories.map((category: any) => {
         return (
+          <div key={category.id}>
           <a
             key={category.id}
             href={`/dashboard/category${category.id}`}
@@ -18,6 +19,7 @@ export default async function CategoryLinks() {
             <p>{category.name}</p>
             <p className="">{category.num_notes}</p>
           </a>
+          </div>
         );
       })}
     </div>

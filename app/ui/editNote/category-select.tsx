@@ -1,19 +1,17 @@
-const options = [
-    { id:"1", name: 'Random', href: '/dashboard/category1', color: "bg-[var(--category-1)]" },
-    { id:"2", name: 'School', href: '/dashboard/category2', color: "bg-[var(--category-2)]" },
-    { id:"3", name: 'Personal', href: '/dashboard/category4', color: "bg-[var(--category-4)]" },
-];
 
-export default function CategorySelect() {
+export default async function CategorySelect(props: any) {
+    const categories = props.categories;
+    console.log(props)
     return (
-        <select className="pl-2 py-2 text-xs bg-transparent border  border-[color:var(--foreground)] rounded-md w-32" name="categories">
-            {options.map((option) => {
+        <select onChange={props.onChange} className="pl-2 py-2 text-xs bg-transparent border  border-[color:var(--foreground)] rounded-md w-40" name="categories">
+            {categories.map((category: any) => {
                 return (
-                    <option className="text-xs border-transparent bg-[color:var(--background)]" key={option.id} value={option.id}>
-                        &#11044; {option.name}
+                    <option className="text-xs border-transparent bg-[color:var(--background)]" key={category.id} value={category.id}>
+                        &#11044; {category.name}
                     </option>
                 );
             })}
         </select>
     );
 }
+
