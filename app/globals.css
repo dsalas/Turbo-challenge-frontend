@@ -11,7 +11,6 @@
   --category-2: #FCDC94;
   --category-3: #C8CFA0;
   --category-4: #78ABA8;
-  
 }
 
 @media (prefers-color-scheme: dark) {
@@ -25,4 +24,20 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: var(--font-turbo-inter);
+}
+
+.category-1-b {
+  background-color: rgba(239,156,102, 0.5);
+}
+
+.category-2-b {
+  background-color: rgba(252,220,148, 0.5);
+}
+
+.category-3-b {
+  background-color: rgba(200,207,160, 0.5);
+}
+
+.category-4-b {
+  background-color: rgba(120,171,168, 0.5);
 }
