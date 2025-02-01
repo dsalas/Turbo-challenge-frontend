@@ -20,14 +20,16 @@ function NoNotes() {
     );
 }
 
-export default function Page() {
-    const hasNotes = false;
+export default async function Page() {
+    const data = await fetch(process.env.API_HOST + 'notes')
+    const notes = await data.json()
+    const hasNotes = notes.length > 0;
     return (
         <div className="font-[family-name:var(--font-turbo-inter)]">
             <DasboardHeader />
             <main className="grid grid-cols-10 text-black">
                 <CategoryLinks />
-                {hasNotes ? <NoteWrapper /> : <NoNotes />}
+                {hasNotes ? <NoteWrapper  notes={notes} /> : <NoNotes />}
             </main>
         </div>
     );
