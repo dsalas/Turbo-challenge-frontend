@@ -28,5 +28,4 @@ export default function NoteEditor(props: any) {
         minute: 'numeric',
         hour12: true 
       })
-    //July 21, 2024 at 8:39pm
   }

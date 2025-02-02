@@ -25,3 +25,16 @@ export async function updateNote(id: number, title: string, nBody: string, categ
     return updatedNote;
 }
     
+export async function createNote(title: string, nBody: string, categoryId: string) {
+    var noteFormData = new FormData();
+    noteFormData.append('title', title);
+    noteFormData.append('body', nBody);
+    noteFormData.append('categoryId', categoryId);
+    const response = await fetch(process.env.API_HOST+'notes', {
+        method: 'POST',
+        body: noteFormData
+    });
+    const createdNote = await response.json();
+    return createdNote;
+}
+    

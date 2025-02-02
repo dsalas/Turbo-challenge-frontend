@@ -1,11 +1,11 @@
 import Link from 'next/link'
 
-export default async function NoteWrapper({ notes }: any) {
+export default function NoteWrapper({ notes }: any) {
   return (
     <div className="p-4 col-span-8 grid grid-cols-3 gap-4">
       {notes.map((note: any) => {
         return (
-          <Note id={note.id} title={note.title} text={note.body} category={note.categoryId} categoryName={note.categoryName} date={formatDate(note.updated)} />
+          <Note key={note.id} id={note.id} title={note.title} text={note.body} category={note.categoryId} categoryName={note.categoryName} date={formatDate(note.updated)} />
         );
       })}
     </div>

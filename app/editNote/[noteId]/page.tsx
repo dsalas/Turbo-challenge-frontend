@@ -1,5 +1,5 @@
 
-import { getCategories, updateNote } from "@/app/actions";
+import { createNote, getCategories } from "@/app/actions";
 import NoteForm from "@/app/ui/editNote/noteForm";
 
 export default async function Page({params}: {params: Promise<{noteId: string}>}) {
@@ -7,18 +7,10 @@ export default async function Page({params}: {params: Promise<{noteId: string}>}
     const categories = getCategories()
     var currentNote = {}    
     if (noteId === 'new') {
-        const newNoteData = {"title":"", "body":"", "categoryId":1}
-        const newNoteResponse = await fetch(process.env.API_HOST+'notes', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(newNoteData)
-        });
-        currentNote = await newNoteResponse.json();
+        currentNote = await createNote("", "", "1")
+        console.log(currentNote)
     } else {
         const currentNoteResponse = await fetch(process.env.API_HOST+'notes?id='+noteId)
-        console.log("getting current note")
         currentNote = await currentNoteResponse.json()
     }
     return (
