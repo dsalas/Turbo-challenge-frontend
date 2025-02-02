@@ -36,7 +36,7 @@ export function Note({
         <div className="flex font-bold mb-2">
           <h1>{title}</h1>
         </div>
-        <p className="truncate text-xs">{text} </p>
+        <p className="line-clamp-6 text-xs">{text} </p>
       </div>
     </Link>
     </div>

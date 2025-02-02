@@ -23,7 +23,7 @@ export default function Home() {
             setNewUser(!newUser);
             setActiveComponent(newUser ? <SignUpForm /> :  <LoginForm />);
           }}
-          >Already have an account? Login</a>
+          >{newUser?"Oops! I’ve never been here before":"Already have an account? Login"} </a>
       </main>
     </div>
 

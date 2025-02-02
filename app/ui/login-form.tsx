@@ -18,7 +18,7 @@ export default function LoginForm() {
           <input name="email" className="w-96 mb-2 p-2 border border-[color:var(--foreground)] rounded bg-transparent placeholder:text-black" placeholder="Email adress" />
           <input type="password" name="password" className="w-96 mb-2 p-2 border border-[color:var(--foreground)] rounded bg-transparent placeholder:text-black" placeholder="Password"/>
           <button type="submit" className="mt-6  border border-[color:var(--foreground)] bg-transparent hover:bg-transparent font-bold py-2 px-4 rounded-full ">
-              Sign up
+              Login
           </button>
         </Form>
       </div>

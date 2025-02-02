@@ -26,13 +26,15 @@ export default function NoteForm(props:any) {
         setNote((prevNote: any) => ({
             ...prevNote,
             'title': event.target.value,
+            'updated': Date.now()
         }))    
     }
 
     function handleBodyChange(event: any) {
         setNote((prevNote: any) => ({
             ...prevNote,
-            'body': event.target.value
+            'body': event.target.value,
+            'updated': Date.now()
         }))    
     }
 
